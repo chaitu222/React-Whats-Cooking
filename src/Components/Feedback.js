@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LR.css'
+import './Comp.css'
 import NavBar from './NavBar';
 
 const Feedback = () => {

@@ -3,7 +3,7 @@ import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/m
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
 
-const HomePage = () => {
+const HomePage = ({setLoginUser}) => {
   return (
     <>
       <NavBar /> <br></br> <br></br>

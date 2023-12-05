@@ -9,3 +9,27 @@
   background-size: cover;
   background-position: center
   }
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgb(39, 28, 20), rgb(77, 57, 43));
+}
+
+
+/* app.css */
+
+/* app.css */
+
+.card-container {
+  backdrop-filter: blur(10px);
+}
+
+.result-card {
+  background-color: #7744024e; /* Blue color */
+  border-radius: 40px ;
+  padding: 15px;
+}

@@ -35,7 +35,7 @@ function NavBar() {
               onChange={handleChange}
               indicatorColor="secondary"
             >
-              <Tab component={Link} to="/home" label="Home" />
+              <Tab component={Link} to="/homepage" label="Home" />
               <Tab component={Link} to="/explore" label="Explore" />
               <Tab component={Link} to="/contact" label="Contact" />
               <Tab component={Link} to="/feedback" label="Feedback" />
