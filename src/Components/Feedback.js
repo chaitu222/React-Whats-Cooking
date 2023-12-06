@@ -27,11 +27,8 @@ const Feedback = () => {
     const validationErrors = validateForm();
 
     if (Object.keys(validationErrors).length === 0) {
-      // Form is valid, can submit or process data
       setIsSubmitted(true);
-      // Here you can handle submitting the form data (e.g., send it to an API)
     } else {
-      // Set errors for invalid fields
       setErrors(validationErrors);
     }
   };
@@ -39,10 +36,10 @@ const Feedback = () => {
   return (
     
     <div>
-        <NavBar />
+        <NavBar /><br></br>
       {isSubmitted ? (
-        <div>
-          <h1>Thank you for your feedback!</h1>
+        <div className='login-container'>
+          <h1 style={{marginTop:'10%',textAlign:'center'}}>Thank you for your feedback!</h1>
         </div>
       ) : (
         <form   class='login-container' onSubmit={handleSubmit}>

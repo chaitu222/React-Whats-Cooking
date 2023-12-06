@@ -17,34 +17,34 @@ const Explore = () => {
         )
     }
     return (
-        
-        
-            <>
-            <NavBar />
-        <div className='login-container'>
-            <center>
-                <h2 style={{color:'white'}}>Food Recipe App</h2>
-                <div class="input-box">
-                    <form onSubmit={submitHandler}>
-                        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search here..." />
-                        <div className="text-center">
-      <Button
-        type="submit"
-        variant="contained"
-        className="btn btn-primary mx-auto"
-        style={{ width: '200px' }}
-      >
-        Search
-      </Button>
-    </div><br></br><br></br>
-                    </form>
-                    
-                    {data.length >= 1 ? <Products data={data} /> : null}
-                </div >
-            </center>
-        </div>
 
-</>
+
+        <>
+            <NavBar />
+            <div className='login-container'>
+                <center>
+                    <h2 style={{ color: 'white' }}>Food Recipe App</h2>
+                    <div class="input-box">
+                        <form onSubmit={submitHandler}>
+                            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search here..." />
+                            <div className="text-center">
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    className="btn btn-primary mx-auto"
+                                    style={{ width: '200px' }}
+                                >
+                                    Search
+                                </Button>
+                            </div><br></br><br></br>
+                        </form>
+
+                        {data.length >= 1 ? <Products data={data} /> : null}
+                    </div >
+                </center>
+            </div>
+
+        </>
     )
 }
 
