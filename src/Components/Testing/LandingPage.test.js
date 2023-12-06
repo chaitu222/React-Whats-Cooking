@@ -30,3 +30,4 @@ test('renders register button', () => {
   );
   expect(screen.getByText('Register')).toBeInTheDocument();
 });
+

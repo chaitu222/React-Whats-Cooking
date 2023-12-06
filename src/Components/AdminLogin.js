@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 const AdminLogin = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // State variables to manage username and password
   const [username, setUsername] = useState('');
@@ -16,9 +16,9 @@ const AdminLogin = () => {
     const predefinedPassword = '12345';
 
     if (username.trim() === predefinedUsername && password === predefinedPassword) {
-        // Successful login - navigate to the home page
-        navigate('/homepage');
-      } else {
+      // Successful login - navigate to the home page
+      navigate('/homepage');
+    } else {
       // Failed login - show an error message or handle accordingly
       alert('Invalid credentials. Please try again.');
     }
@@ -54,7 +54,10 @@ const AdminLogin = () => {
                     placeholder="Password"
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">Login</button> <br></br><br></br>
+                <Link to="/resetpassword" style={{ textDecoration: 'none', color: 'white' }}>
+                  Forgot Password?
+                </Link>
               </form>
             </div>
           </div>

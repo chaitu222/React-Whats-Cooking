@@ -173,7 +173,6 @@ const LoginPage = ({ setLoginUser }) => {
         .then((res) => {
           alert(res.data.message);
           setLoginUser(res.data.user);
-        
           navigate('/homepage');
         })
         .catch((error) => {
@@ -221,7 +220,7 @@ const LoginPage = ({ setLoginUser }) => {
         <button type="submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
         </button>
-        <br></br>
+        <br></br><br></br>
         <Link to="/resetpassword" style={{ textDecoration: 'none', color: 'white' }}>
           Forgot Password?
         </Link>

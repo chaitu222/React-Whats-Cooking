@@ -71,7 +71,7 @@ const LandingPage = () => {
               </MenuItem>
             </Menu>
           </div><br></br>
-          <div style={{ display: 'flex', justifyContent: 'right', marginTop:'-45px'}}>
+          <div style={{ display: 'flex', justifyContent: 'right', marginTop:'-53px'}}>
   <Button sx={{ background: 'orange' }} variant="contained" component={Link} to="/register">
     Register
   </Button>

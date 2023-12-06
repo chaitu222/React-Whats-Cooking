@@ -21,16 +21,24 @@ const ResetPassword = () => {
   };
 
   return (
-    <div>
-      <h2>Reset Password</h2>
+    <>
+    <div className='login-container'>
+    <form>
+      <h2 style={{textAlign:'center',color:'white'}} >Reset Password</h2>
+      <label htmlFor="email" style={{textAlign:'center',color:'white'}}>Enter your email:</label> <br></br><br></br>
       <input
         type="email"
+        id="email"
         placeholder="Enter your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button onClick={handleResetPassword}>Send Reset Link</button>
+      <button type="button" onClick={handleResetPassword}>
+        Send Reset Link
+      </button>
+    </form>
     </div>
+    </>
   );
 };
 
