@@ -106,14 +106,12 @@
 
 // Import necessary dependencies
 import React, { useState } from 'react';
-import { useNavigate,Link} from 'react-router-dom';
-import './Comp.css';
-import '../App.css';
+import { useNavigate, Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import axios from 'axios';
 
-
 // Define the Login component
-const Login = ({ setLoginUser }) => {
+const LoginPage = ({ setLoginUser }) => {
   // State to manage user input and validation errors
   const [user, setUser] = useState({
     email: '',
@@ -175,7 +173,7 @@ const Login = ({ setLoginUser }) => {
         .then((res) => {
           alert(res.data.message);
           setLoginUser(res.data.user);
-          setLoginUser(true);
+        
           navigate('/homepage');
         })
         .catch((error) => {
@@ -198,41 +196,45 @@ const Login = ({ setLoginUser }) => {
   // Render the login form
   return (
     <>
-    <form className="login-container" onSubmit={handleSubmit}>
-      <center>
-        <h1>Login</h1>
-      </center>
-      <br />
-      <br />
-      <input
-        type="text"
-        name="email"
-        placeholder="Email"
-        value={user.email}
-        onChange={handleChange}
-      />
-      <div className="error-message">{validationErrors.email}</div>
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={user.password}
-        onChange={handleChange}
-      />
-      <div className="error-message">{validationErrors.password}</div>
-      <button type="submit" disabled={loading} >
-        {loading ? 'Logging in...' : 'Login'}
-      </button><br></br>
-    </form>
-    <div>
-      <Link to="/homepage">
-        <button>Go to Homepage</button>
-      </Link>
-    </div>
+      <form className="login-container" onSubmit={handleSubmit}>
+        <center>
+          <h1>Login</h1>
+        </center>
+        <br />
+        <br />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          value={user.email}
+          onChange={handleChange}
+        />
+        <div className="error-message">{validationErrors.email}</div>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={user.password}
+          onChange={handleChange}
+        />
+        <div className="error-message">{validationErrors.password}</div>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
+        <br></br>
+        <Link to="/resetpassword" style={{ textDecoration: 'none', color: 'white' }}>
+          Forgot Password?
+        </Link>
+      </form>
+     
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+          <Button component={Link} to="/homepage" variant="contained">
+            Go to Homepage
+          </Button>
+        </div>
+      
     </>
   );
 };
 
-export default Login;
-
-
+export default LoginPage;

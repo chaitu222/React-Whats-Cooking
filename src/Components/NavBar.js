@@ -29,8 +29,8 @@ function NavBar() {
               What's Cooking?
             </Typography>
             <Tabs
-              sx={{ marginRight: 'auto' }}
-              textColor="white"
+              sx={{ marginRight: 'auto',color: 'white' }}
+              textColor="inherit"
               value={value}
               onChange={handleChange}
               indicatorColor="secondary"

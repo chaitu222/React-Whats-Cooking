@@ -55,7 +55,8 @@ import Contact from './Components/Contact';
 import FeedbackForm from './Components/Feedback';
 import ProfilePage from './Components/Profile';
 import Explore from './Components/Explore';
-
+import ResetPassword from './Components/ResetPassword';
+import AdminLogin from './Components/AdminLogin'
 function App() {
   const [user, setLoginUser] = useState({});
 
@@ -70,11 +71,13 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/explore" element={<Explore />} />
+          <Route path="/resetpassword" element={<ResetPassword/>} />
           <Route path="/myprofile" element={<ProfilePage />} />
           <Route path="/"  element={<LandingPage />} />
         </Routes>

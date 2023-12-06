@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
 
-const HomePage = ({setLoginUser}) => {
+const HomePage = ({ setLoginUser }) => {
   return (
     <>
       <NavBar /> <br></br> <br></br>
-      <Container sx={{ marginTop: '50px', width:'60%'}}>
+      <Container sx={{ marginTop: '50px', width: '60%' }}>
         <Box
           sx={{
             padding: '20px',
@@ -15,7 +15,7 @@ const HomePage = ({setLoginUser}) => {
             borderRadius: '20px',
             backdropFilter: 'blur(30px)',
             backgroundColor: 'rgba(39, 39, 39, 0.218)',
-            marginTop: '50px',
+            marginTop: '200px',
           }}
         >
           <Typography variant="h4" sx={{ marginBottom: '20px' }}>
@@ -32,80 +32,13 @@ const HomePage = ({setLoginUser}) => {
             your life easier by helping you decide what to cook based on the time and ingredients in hand. You no
             longer must surf various websites to find the “perfect” recipe.
           </Typography>
-          <Typography variant="body1" sx={{ color: 'white' }} component={Link} to="/explore">
-          EXPLORE
+          <Typography variant="body1" sx={{ color: '#007bff' }} component={Link} to="/explore">
+            EXPLORE
+          </Typography><br></br><br></br>
+
+          <Typography variant="body1" sx={{ color: 'white' }}>
+            "Elevate your cooking game with our user-friendly platform, where you can search, save, and share your favorite recipes to make every meal a memorable experience."
           </Typography>
-        </Box>
-
-      
-        <Box
-          sx={{
-            overflowX: 'scroll',
-            whiteSpace: 'nowrap',
-            marginTop: '80px',
-            paddingTop: '20px',
-            paddingBottom: '20px',
-            display: 'flex',
-          }}
-        >
-          <Card sx={{ width: 200, marginRight: '35px' }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image={require('../images/landingbg.jpg').default}
-              alt="Food 1"
-            />
-            <CardContent>
-              <Typography variant="subtitle1">Biriyani</Typography>
-            </CardContent>
-          </Card>
-
-          <Card sx={{ width: 200, marginRight: '35px' }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="../../assets/images/fooditems/dalchawal.jpg"
-              alt="Food 2"
-            />
-            <CardContent>
-              <Typography variant="subtitle1">Dal Chawal</Typography>
-            </CardContent>
-          </Card>
-
-          <Card sx={{ width: 200, marginRight: '35px' }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="../../assets/images/fooditems/dalchawal.jpg"
-              alt="Food 2"
-            />
-            <CardContent>
-              <Typography variant="subtitle1">Dal Chawal</Typography>
-            </CardContent>
-          </Card>
-          <Card sx={{ width: 200, marginRight: '35px' }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="../../assets/images/fooditems/dalchawal.jpg"
-              alt="Food 2"
-            />
-            <CardContent>
-              <Typography variant="subtitle1">Dal Chawal</Typography>
-            </CardContent>
-          </Card>
-          
-          <Card sx={{ width: 200, marginRight: '35px' }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="../../assets/images/fooditems/dalchawal.jpg"
-              alt="Food 2"
-            />
-            <CardContent>
-              <Typography variant="subtitle1">Dal Chawal</Typography>
-            </CardContent>
-          </Card>
         </Box>
       </Container>
     </>
