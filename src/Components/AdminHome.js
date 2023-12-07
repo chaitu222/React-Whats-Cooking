@@ -1,13 +1,12 @@
 import React from 'react';
-import { Container, Typography, Box } from '@mui/material';
-import NavBar from './NavBar';
+import { Container, Typography, Box,Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import AdminNav from './AdminNav';
 
-const HomePage = ({ setLoginUser }) => {
- 
+const AdminHomePage = ({ setLoginUser }) => {
   return (
     <>
-      <NavBar /> <br></br> <br></br>
+      <AdminNav /> <br></br> <br></br>
       <Container sx={{ marginTop: '50px', width: '60%' }}>
         <Box
           sx={{
@@ -19,13 +18,17 @@ const HomePage = ({ setLoginUser }) => {
             marginTop: '200px',
           }}
         >
+
+<Typography variant="h4" sx={{ marginBottom: '20px' }}>
+           Hello <i style={{color:'yellow'}}>Chaitanya</i>
+          </Typography>
           <Typography variant="h4" sx={{ marginBottom: '20px' }}>
             Welcome to What's Cooking
           </Typography>
           <Typography variant="body1" sx={{ color: 'white' }}>
             Explore thousands of recipes and cook like a pro!
           </Typography>
-          <Typography variant="h5" sx={{ color: 'yellow', marginTop: '20px' }}>
+          <Typography variant="h5" sx={{ color: '#007bff', marginTop: '20px' }}>
             “What’s Cooking?”
           </Typography>
           <Typography variant="body1" sx={{ color: 'white' }}>
@@ -42,10 +45,12 @@ const HomePage = ({ setLoginUser }) => {
           </Typography>
         </Box>
       </Container>
- 
 
+      <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/userslist">
+              Users List
+            </Button>
     </>
   );
 };
 
-export default HomePage;
+export default AdminHomePage;

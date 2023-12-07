@@ -17,7 +17,7 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: green;
+    color: rgb(0, 76, 255);
     
   }
   
@@ -94,4 +94,33 @@ input[type='email'],
 .form-select{
   width:100%;
   padding: 20px;
+}
+
+/* footer styling */
+.footer-container {
+  position: relative;
+  width: 100%;
+  background-color: #171717; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.footer-section {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: yellow;
 }

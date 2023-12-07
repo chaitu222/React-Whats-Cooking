@@ -17,7 +17,7 @@ const AdminLogin = () => {
 
     if (username.trim() === predefinedUsername && password === predefinedPassword) {
       // Successful login - navigate to the home page
-      navigate('/homepage');
+      navigate('/adminhome');
     } else {
       // Failed login - show an error message or handle accordingly
       alert('Invalid credentials. Please try again.');

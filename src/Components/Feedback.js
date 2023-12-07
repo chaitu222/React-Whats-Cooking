@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Comp.css'
+import './Comp.css';
 import NavBar from './NavBar';
 
 const Feedback = () => {
@@ -22,11 +22,24 @@ const Feedback = () => {
     return errors;
   };
 
+  const saveFeedbackToConsole = (data) => {
+    console.log('Feedback Data:', data);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
 
     if (Object.keys(validationErrors).length === 0) {
+      // Log feedback data to console
+      const feedbackData = {
+        email,
+        feedback,
+        timestamp: new Date().toISOString(),
+      };
+
+      saveFeedbackToConsole(feedbackData);
+      
       setIsSubmitted(true);
     } else {
       setErrors(validationErrors);
@@ -34,18 +47,16 @@ const Feedback = () => {
   };
 
   return (
-    
     <div>
-        <NavBar /><br></br>
+      <NavBar /><br></br>
       {isSubmitted ? (
         <div className='login-container'>
-          <h1 style={{marginTop:'10%',textAlign:'center'}}>Thank you for your feedback!</h1>
+          <h1 style={{ marginTop: '10%', textAlign: 'center' }}>Thank you for your feedback!</h1>
         </div>
       ) : (
-        <form   class='login-container' onSubmit={handleSubmit}>
-           <center><h1>Feedback</h1></center><br/><br/>
+        <form className='login-container' onSubmit={handleSubmit}>
+          <center><h1>Feedback</h1></center><br /><br />
           <div>
-            
             <input
               type="email" placeholder='Email'
               value={email}
@@ -54,9 +65,8 @@ const Feedback = () => {
             {errors.email && <p>{errors.email}</p>}
           </div>
           <div>
-            
             <textarea
-              value={feedback}  placeholder='Give your Feedback'
+              value={feedback} placeholder='Give your Feedback'
               onChange={(e) => setFeedback(e.target.value)}
             />
             {errors.feedback && <p>{errors.feedback}</p>}
@@ -68,4 +78,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default Feedback;
