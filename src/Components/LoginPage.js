@@ -171,9 +171,12 @@ const LoginPage = ({ setLoginUser }) => {
       axios
         .post('http://localhost:9002/login', user)
         .then((res) => {
+          
           alert(res.data.message);
+          
           setLoginUser(res.data.user);
           navigate('/homepage');
+          
         })
         .catch((error) => {
           if (error.response) {
@@ -183,7 +186,7 @@ const LoginPage = ({ setLoginUser }) => {
           } else if (error.request) {
             console.error('Request error:', error.request);
           } else {
-            console.error('Axios error:', error.message);
+            console.error('system error:', error.message);
           }
         })
         .finally(() => {

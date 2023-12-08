@@ -22,14 +22,18 @@ body {
 
 /* app.css */
 
-/* app.css */
-
 .card-container {
   backdrop-filter: blur(10px);
 }
 
 .result-card {
-  background-color: #7744024e; /* Blue color */
+  background-color: rgba(166, 95, 2, 0.306); /* Blue color */
   border-radius: 40px ;
   padding: 15px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }

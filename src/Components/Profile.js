@@ -94,7 +94,7 @@ function ProfilePage() {
     <>
       <NavBar />
       <div className="login-container" style={{ marginTop: '100px' }}>
-        <div className="row">
+        <div className="rows">
           <div className="col-sm-12">
             <div className="profile-container">
               <h2 className="text-center mb-4" style={{ color: 'white' }}>My Profile</h2>

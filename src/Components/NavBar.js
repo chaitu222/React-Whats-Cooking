@@ -24,7 +24,7 @@ function NavBar() {
       <AppBar sx={{ background: '#292b2c' }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           
-            <Typography sx={{ fontFamily: 'cursive', color: '#ffea00' }}>
+            <Typography component={Link} to="/adminhome" style={{textDecoration:'none'}} sx={{ fontFamily: 'cursive', color: '#ffea00' }}>
               <EggIcon />
               What's Cooking?
             </Typography>

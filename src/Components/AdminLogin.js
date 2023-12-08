@@ -26,7 +26,7 @@ const AdminLogin = () => {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="admin-row">
         <div className="col-sm-12">
           <div className="login-container">
             <h2 className="text-center mb-4" style={{ color: 'white' }}>Admin Login</h2>
