@@ -46,8 +46,11 @@ const AdminHomePage = ({ setLoginUser }) => {
         </Box>
       </Container>
 
-      <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/userslist">
+      <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/admindashboard">
               Users List
+            </Button><br></br><br></br>
+            <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/adminrecipes">
+              Recepies List
             </Button>
     </>
   );

@@ -126,9 +126,9 @@ const LoginPage = ({ setLoginUser }) => {
   // State for loading indicator
   const [loading, setLoading] = useState(false);
 
-
   // Hook for navigation
   const navigate = useNavigate();
+ 
 
   // Event handler for input changes
   const handleChange = (e) => {
@@ -167,15 +167,16 @@ const LoginPage = ({ setLoginUser }) => {
 
     // If validation is successful, proceed with login
     if (validateFields()) {
-      setLoading(true); // Set loading indicator to true
+      setLoading(true); 
       axios
         .post('http://localhost:9002/login', user)
         .then((res) => {
           
           alert(res.data.message);
-          
           setLoginUser(res.data.user);
-          navigate('/homepage');
+          navigate('/home');
+            
+          
           
         })
         .catch((error) => {
@@ -200,7 +201,7 @@ const LoginPage = ({ setLoginUser }) => {
     <>
       <form className="login-container" onSubmit={handleSubmit}>
         <center>
-          <h1>Login</h1>
+          <h1> User Login</h1>
         </center>
         <br />
         <br />

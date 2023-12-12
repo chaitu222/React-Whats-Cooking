@@ -76,7 +76,7 @@
 import React, { useState } from 'react';
 import './Comp.css';
 import NavBar from './NavBar';
-import avatarImage from '../images/profile.jpg'; // Replace with the actual path to your image
+import avatarImage from '../images/profile.jpg'; 
 
 function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);

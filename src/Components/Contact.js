@@ -1,79 +1,72 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 import './Comp.css'
+import axios from 'axios';
+ 
 
-const ContactForm = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
-
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    // Add logic for form submission, e.g., send data to a server
+    try {
+      await axios.post('http://localhost:9002/contact', formData);
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting message:', error);
+      alert('Failed to send message. Please try again.');
+    }
   };
-
+ 
   return (
+
     <>
     <NavBar />
-    <form className="login-container" onSubmit={handleSubmit}>
-      <center>
-        <h1>Contact Us</h1>
-      </center>
-      <br />
-      <br />
-      <div className="form-group">
-        <label htmlFor="name">Name:</label>
+    <div>
+     
+      <form   class='login-container' onSubmit={handleSubmit}>
+        <h1 style={{textAlign:'center'}}>Contact Us</h1><br></br>
         <input
           type="text"
-          id="name"
+          placeholder="Name"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          placeholder="Your Name"
         />
-      </div>
-
-      <div className="form-group">
-        <label >Email:</label>
+        <br />
         <input
           type="email"
-          id="email"
+          placeholder="Email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          placeholder="Your Email"
         />
-      </div>
-
-      <div className="form-group">
-        <label >Message:</label>
+        <br /><br></br>
         <textarea
-          id="message"
+          placeholder="Message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
-          placeholder="Your Message"
-        />
-      </div>
-
-      <button type="submit">Submit</button>
-    </form>
+        ></textarea>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     </>
   );
 };
-
-export default ContactForm;
+ 
+export default Contact;

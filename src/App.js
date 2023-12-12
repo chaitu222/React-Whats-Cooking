@@ -16,7 +16,7 @@
 //   const [user, setLoginUser] = useState({});
 
 //   return (
-    
+
 //     <div className='background'>
 //     <Router>
 //       <Routes>
@@ -38,7 +38,7 @@
 //       </Routes>
 //     </Router>
 //     </div>
-  
+
 //   );
 // };
 
@@ -61,6 +61,8 @@ import AdminLogin from './Components/AdminLogin'
 import AdminHomePage from './Components/AdminHome';
 import UsersList from './Components/UsersLists';
 import Footer from './Components/Footer';
+import AdminDashboard from './Components/AdminDashboard';
+import AdminRecipes from './Components/AdminRecipes';
 function App() {
   const [user, setLoginUser] = useState({});
 
@@ -69,14 +71,15 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/home"
+            path="/homepage"
             element={
               user && user._id ? <HomePage setLoginUser={setLoginUser} /> : <LoginPage setLoginUser={setLoginUser} />
             }
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/adminhome" element={<AdminHomePage />} />
-          
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/adminrecipes" element={<AdminRecipes />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/userslist" element={<UsersList />} />
           <Route path="/register" element={<RegisterPage />} />
@@ -84,12 +87,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/explore" element={<Explore />} />
-          <Route path="/resetpassword" element={<ResetPassword/>} />
+          <Route path="/resetpassword" element={<ResetPassword />} />
           <Route path="/myprofile" element={<ProfilePage />} />
-          <Route path="/"  element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
         </Routes>
-        <div style={{textAlign:'end',marginTop:'20%'}}>
-        <Footer />
+        <div style={{ textAlign: 'end', marginTop: '20%' }}>
+          <Footer />
         </div>
       </Router>
     </div>

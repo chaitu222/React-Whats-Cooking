@@ -17,7 +17,19 @@ function NavBar() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    
   };
+
+  const LogoutHandler = () => {
+    setAnchorEl({ type: 'USER_LOGOUT' });
+      localStorage.removeItem('userInfo');
+      localStorage.removeItem('Home');
+      localStorage.removeItem('Explore');
+      localStorage.removeItem('Feedback');
+      localStorage.removeItem('profile');
+      window.location.href = '/login';
+    };
+  
 
   return (
     <React.Fragment>
@@ -53,7 +65,7 @@ function NavBar() {
               <MenuItem component={Link} to="/myprofile" onClick={handleMenuClose}>
                 My Profile
               </MenuItem>
-              <MenuItem component={Link} to="/" onClick={handleMenuClose}>
+              <MenuItem component={Link} to="/" onClick={LogoutHandler}>
                 Logout
               </MenuItem>
             </Menu>

@@ -103,9 +103,11 @@ const Product = ({ recipe }) => {
       <div className="card h-100 result-card">
         <img src={recipe.recipe.image} className="card-img-top" alt="Recipe" />
         <div className="card-body">
-          <h5 className="card-title">{recipe.recipe.label}</h5>
-          <h4 className="card-text"> Ingredients:</h4>
-          <p>{recipe.recipe.ingredientLines.join(', ')}</p>
+          <h3 className="card-title">[ {recipe.recipe.label} ]</h3><br></br>
+          <h4 className="card-text" style={{color:'yellow'}}> Ingredients:</h4>
+          <p>{recipe.recipe.ingredientLines.join(', ')}</p><br></br>
+          <h4 className="card-text" style={{color:'yellow'}}>Calories:</h4>
+      <p>{recipe.recipe.calories.toFixed(2)} kcal</p><br></br>
           <h4 className="card-text"> Instructions:</h4>
           <p className="card-text">
             <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">

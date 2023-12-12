@@ -3,8 +3,7 @@ import 'react-responsive-modal/styles.css';
 import { PlusCircle, Edit, Trash2 } from 'react-feather';
 import { Modal } from 'react-responsive-modal';
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, TextareaAutosize } from '@mui/material';
-import NavBar from './NavBar';
-
+import { Link } from 'react-router-dom';
 function UsersList() {
   const blankUser = {
     name: '',
@@ -53,7 +52,6 @@ function UsersList() {
 
   return (
     <>
-    <NavBar />
     <div className="login-container">
       <div className="d-flex">
         <h1 style={{ textAlign: 'center' }}>Users List</h1>
@@ -67,11 +65,11 @@ function UsersList() {
       </div>
       <hr />
 
-      <TableContainer>
+      <TableContainer >
         <Table style={{ backgroundColor: 'white' }}>
-          <TableHead>
+          <TableHead >
             <TableRow>
-              <TableCell>Name</TableCell>
+              <TableCell >Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Address</TableCell>
               <TableCell>Action</TableCell>
@@ -80,8 +78,8 @@ function UsersList() {
           <TableBody style={{background:'white'}}>
             {userdata.length > 0 &&
               userdata.map((user, index) => (
-                <TableRow key={index}>
-                  <TableCell>{user.name}</TableCell>
+                <TableRow key={index}  >
+                  <TableCell >{user.name}</TableCell>
                   <TableCell>{user.email}</TableCell>
                   <TableCell>{user.address}</TableCell>
                   <TableCell>
@@ -126,6 +124,10 @@ function UsersList() {
         </div>
       </Modal>
     </div>
+
+    <Button  style={{ width:'20%',marginLeft:'40%' }} variant="contained"  component={Link} to="/adminhome">
+              Go to Home page
+            </Button>
     </>
   );
 }
