@@ -3,6 +3,7 @@ import Products from './Products';
 import { Button } from '@mui/material';
 import NavBar from './NavBar';
 
+
 const Explore = () => {
     const [search, setSearch] = useState('');
     const [data, setData] = useState([]);
@@ -17,8 +18,6 @@ const Explore = () => {
         )
     }
     return (
-
-
         <>
             <NavBar />
             <div className='login-container'>
@@ -38,7 +37,6 @@ const Explore = () => {
                                 </Button>
                             </div><br></br><br></br>
                         </form>
-
                         {data.length >= 1 ? <Products data={data} /> : null}
                     </div >
                 </center>

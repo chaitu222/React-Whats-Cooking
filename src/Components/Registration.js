@@ -343,7 +343,7 @@ function renderInput(name, placeholder, type = "text") {
         placeholder={placeholder}
         onChange={handleChange}
       />
-      {validationErrors[name] && <p className="error-message" style={{ color: 'red' }}>{validationErrors[name]}</p>} <br></br>
+      {validationErrors[name] && <p className="error-message" style={{color:'red'}}>{validationErrors[name]}</p>} <br></br>
     </>
   );
 }

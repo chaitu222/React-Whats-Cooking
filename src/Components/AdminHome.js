@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box,Button } from '@mui/material';
+import { Container, Typography, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AdminNav from './AdminNav';
 
@@ -19,8 +19,8 @@ const AdminHomePage = ({ setLoginUser }) => {
           }}
         >
 
-<Typography variant="h4" sx={{ marginBottom: '20px' }}>
-           Hello <i style={{color:'yellow'}}>Chaitanya</i>
+          <Typography variant="h4" sx={{ marginBottom: '20px' }}>
+            Hello <i style={{ color: 'yellow' }}>Chaitanya</i>
           </Typography>
           <Typography variant="h4" sx={{ marginBottom: '20px' }}>
             Welcome to What's Cooking
@@ -46,12 +46,12 @@ const AdminHomePage = ({ setLoginUser }) => {
         </Box>
       </Container>
 
-      <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/admindashboard">
-              Users List
-            </Button><br></br><br></br>
-            <Button  style={{ width:'10%',marginLeft:'45%' }} variant="contained"  component={Link} to="/adminrecipes">
-              Recepies List
-            </Button>
+      <Button style={{ width: '10%', marginLeft: '45%' }} variant="contained" component={Link} to="/admindashboard">
+        Users List
+      </Button><br></br><br></br>
+      <Button style={{ width: '10%', marginLeft: '45%' }} variant="contained" component={Link} to="/adminrecipes">
+        Recepies List
+      </Button>
     </>
   );
 };

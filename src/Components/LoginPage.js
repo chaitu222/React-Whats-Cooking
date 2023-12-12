@@ -174,7 +174,7 @@ const LoginPage = ({ setLoginUser }) => {
           
           alert(res.data.message);
           setLoginUser(res.data.user);
-          navigate('/home');
+          navigate('/homepage');
             
           
           
